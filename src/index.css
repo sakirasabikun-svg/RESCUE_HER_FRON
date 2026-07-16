@@ -1,0 +1,75 @@
+/* src/index.css */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  /* একটি স্ট্যান্ডার্ড গ্লোবাল ফন্ট ফ্যামিলি */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* 📱 Safe & Structured Global Mobile Responsiveness */
+@media (max-width: 768px) {
+  
+  /* 🚨 সব ধ্বংসাত্মক গ্লোবাল [style*="..."] সিলেক্টর রিমুভ করা হয়েছে */
+  /* এর ফলে তোমার নেভবার, বাটন বা বাবল আইকনগুলো আর কখনো ভেঙে জগাখিচুড়ি হবে না */
+
+  /* 💡 যদি কখনো কোনো নির্দিষ্ট গ্রিড বা ফ্লেক্স কন্টেইনারকে মোবাইলে কলাম করতে চাও, 
+     তাহলে সেই ডিভ-এ (div) নিচের ক্লাসগুলো ব্যবহার করতে পারো: */
+  
+  .flex-mobile-column {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .grid-mobile-1fr {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* মোবাইলের জন্য নিরাপদ গ্লোবাল টেক্সট সাইজ স্কেলিং */
+  h1 { font-size: 28px !important; }
+  h2 { font-size: 22px !important; }
+  h3 { font-size: 18px !important; }
+  p, span, input, button { font-size: 14px !important; }
+
+  /* টেবিল থাকলে সেটি স্ক্রোলবল বা রেসপন্সিভ রাখা */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+
+/* 🚨 APPEND THIS AT THE BOTTOM OF YOUR src/index.css */
+
+@media (max-width: 768px) {
+  /* Navbar main wrapper (jekhane logo, links r button shobpashapashi thake) */
+  header, nav, .navbar-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+    height: auto !important;
+    padding: 15px !important;
+    align-items: center !important;
+  }
+
+  /* Links gulo jate dain dike kete na giye jaiga na thakle niche neme ase */
+  /* Tumi chaile ei class ta tomar links holder div-e className hisebeo bosiye dite paro */
+  .nav-links, nav div, header div {
+    flex-wrap: wrap !important; /* This is the magic line that stops clipping */
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  /* Footer layout jate mobile-e kete na jay */
+  footer, .footer-container {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 25px !important;
+  }
+}
