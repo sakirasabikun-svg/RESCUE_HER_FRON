@@ -432,7 +432,7 @@ function LoginView({ onLoginSuccess, onSwitchToSignup, onBackToHome }) {
         </div>
 
         <div style={switchTextStyle}>
-          New to the Security Network? <span onClick={onSwitchToSignup} style={linkStyle}>Register Workspace</span>
+          New to the Security Network? <span onClick={onSwitchToSignup} style={linkStyle}>Sign Up</span>
         </div>
 
         <button onClick={onBackToHome} style={backButtonStyle}>← Return to Platform Gateway</button>

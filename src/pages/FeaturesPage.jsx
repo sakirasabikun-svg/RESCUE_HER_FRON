@@ -328,29 +328,312 @@
 
 
 
+// /////real code 
+// // src/pages/FeaturesPage.jsx
+// import React from 'react';
+
+// function FeaturesPage() {
+//   const images = {
+//     sos: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=600&q=80",
+//     tracking: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80",
+//     logging: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
+//   };
+
+//   return (
+//     <div className="features-page-container">
+      
+//       {/* 📱 100% INDEPENDENT LOCAL RESPONSIVE STYLESHEET */}
+//       <style>{`
+//         .features-page-container {
+//           box-sizing: border-box;
+//           width: 100%;
+//           color: #093325;
+//           padding-bottom: 40px;
+//           font-family: system-ui, -apple-system, sans-serif;
+//           background-color: #f9fbf9; /* Makes container completely standalone */
+//         }
+//         .features-page-container *, 
+//         .features-page-container *::before, 
+//         .features-page-container *::after {
+//           box-sizing: border-box;
+//         }
+        
+//         /* HERO TITLE SECTION */
+//         .features-hero {
+//           padding: 140px 6% 40px 6%;
+//           text-align: center;
+//         }
+//         .features-subtitle {
+//           text-transform: uppercase;
+//           font-size: 12px;
+//           font-weight: 700;
+//           color: #10b981;
+//           letter-spacing: 2px;
+//           display: block;
+//           margin-bottom: 12px;
+//         }
+//         .features-main-title {
+//           font-size: 48px;
+//           font-weight: 800;
+//           color: #093325;
+//           letter-spacing: -1.5px;
+//           margin: 0 auto 20px auto;
+//           max-width: 600px;
+//           line-height: 1.2;
+//         }
+//         .features-hero-desc {
+//           font-size: 16px;
+//           color: #5c726a;
+//           max-width: 540px;
+//           margin: 0 auto;
+//           line-height: 1.6;
+//         }
+
+//         /* DETAILED FEATURES SECTION */
+//         .features-content-section {
+//           padding: 40px 6% 60px 6%;
+//           display: flex;
+//           flex-direction: column;
+//           gap: 80px;
+//           width: 100%;
+//         }
+//         .feature-row {
+//           display: flex;
+//           flex-direction: row;
+//           gap: 60px;
+//           align-items: center;
+//           width: 100%;
+//         }
+//         .feature-row.is-reversed {
+//           flex-direction: row-reverse;
+//         }
+        
+//         /* INNER COMPONENTS STYLING */
+//         .feature-content {
+//           flex: 1;
+//           text-align: left;
+//         }
+//         .feature-badge {
+//           padding: 6px 14px;
+//           background: #fee2e2;
+//           color: #ef4444;
+//           border-radius: 50px;
+//           font-size: 11px;
+//           font-weight: 700;
+//           display: inline-block;
+//           margin-bottom: 20px;
+//           letter-spacing: 0.5px;
+//         }
+//         .feature-title {
+//           font-size: 32px;
+//           font-weight: 800;
+//           color: #093325;
+//           margin: 0 0 18px 0;
+//           letter-spacing: -0.8px;
+//         }
+//         .feature-desc {
+//           font-size: 15px;
+//           color: #5c726a;
+//           line-height: 1.65;
+//           margin: 0 0 24px 0;
+//         }
+//         .feature-list {
+//           padding-left: 20px;
+//           margin: 0;
+//           font-size: 14.5px;
+//           color: #093325;
+//           line-height: 2;
+//           font-weight: 600;
+//           list-style-type: square;
+//         }
+//         .feature-image-wrapper {
+//           flex: 1;
+//           width: 100%;
+//           height: 340px;
+//           border-radius: 24px;
+//           overflow: hidden;
+//           box-shadow: 0 12px 30px rgba(9, 51, 37, 0.06);
+//           transition: transform 0.3s ease;
+//         }
+//         .feature-image-wrapper:hover {
+//           transform: scale(1.02);
+//         }
+//         .feature-image {
+//           width: 100%;
+//           height: 100%;
+//           objectFit: 'cover';
+//           object-fit: 'cover';
+//           display: block;
+//         }
+
+//         /* 📱 Tablet & Mobile Responsive Breakpoints */
+//         @media (max-width: 768px) {
+//           .features-hero {
+//             padding: 100px 20px 30px 20px;
+//           }
+//           .features-main-title {
+//             font-size: 28px;
+//           }
+//           .features-hero-desc {
+//             font-size: 14.5px;
+//           }
+//           .features-content-section {
+//             padding: 20px 20px 40px 20px;
+//             gap: 50px;
+//           }
+//           /* Normal and Reversed rows will both stack vertically uniformly on mobile */
+//           .feature-row, 
+//           .feature-row.is-reversed {
+//             flex-direction: column;
+//             gap: 24px;
+//           }
+//           .feature-title {
+//             font-size: 24px;
+//             margin-bottom: 12px;
+//           }
+//           .feature-desc {
+//             font-size: 14px;
+//             margin-bottom: 16px;
+//           }
+//           .feature-image-wrapper {
+//             height: 250px; /* Reduced height for mobile optimization */
+//             border-radius: 16px;
+//           }
+//         }
+
+//         /* 📱 Small Portrait Smartphones */
+//         @media (max-width: 480px) {
+//           .features-hero {
+//             padding: 90px 16px 24px 16px;
+//           }
+//           .features-main-title {
+//             font-size: 24px;
+//           }
+//           .feature-image-wrapper {
+//             height: 200px;
+//           }
+//         }
+//       `}</style>
+
+//       {/* 🎯 HERO TITLE */}
+//       <section className="features-hero">
+//         <span className="features-subtitle">SYSTEM ARCHITECTURE</span>
+//         <h1 className="features-main-title">
+//           Advanced Security Features Engineered For You
+//         </h1>
+//         <p className="features-hero-desc">
+//           Explore the core defensive modules operating seamlessly inside the RescueHer secure matrix framework.
+//         </p>
+//       </section>
+
+//       {/* 📦 DETAILED FEATURES SECTION */}
+//       <section className="features-content-section">
+        
+//         {/* FEATURE 1: INSTANT SOS */}
+//         <div className="feature-row">
+//           <div className="feature-content">
+//             <div className="feature-badge">MODULE 01</div>
+//             <h2 className="feature-title">Instant SOS Broadcast Node</h2>
+//             <p className="feature-desc">
+//               Trigger an immediate, high-priority alarm with a single interaction. The system automatically bypasses browser background delays to process telemetry packets, instantly fetching high-accuracy GPS grids.
+//             </p>
+//             <ul className="feature-list">
+//               <li>⚡ One-tap critical hardware routing layer</li>
+//               <li>✉️ Simultaneous multi-peer emergency email pipeline</li>
+//               <li>🔒 Securely managed token authentication state</li>
+//             </ul>
+//           </div>
+//           <div className="feature-image-wrapper">
+//             <img src={images.sos} alt="Instant SOS Node" className="feature-image" />
+//           </div>
+//         </div>
+
+//         {/* FEATURE 2: LIVE TRACK GRID */}
+//         <div className="feature-row is-reversed">
+//           <div className="feature-content">
+//             <div className="feature-badge" style={{ background: '#e0f2fe', color: '#0284c7' }}>MODULE 02</div>
+//             <h2 className="feature-title">Live Telemetry Tracking Grid</h2>
+//             <p className="feature-desc">
+//               Keep your trusted guardians updated with active location parameters. Leveraging integrated digital cartography layers, the application streams accurate coordinates without heavy network resource draining.
+//             </p>
+//             <ul className="feature-list">
+//               <li>📍 Precision coordinates gathering loop</li>
+//               <li>🗺️ Clean, accessible OpenStreetMap or Map link outputs</li>
+//               <li>🔋 Optimized client-to-server data synchronization</li>
+//             </ul>
+//           </div>
+//           <div className="feature-image-wrapper">
+//             <img src={images.tracking} alt="Live Track Grid" className="feature-image" />
+//           </div>
+//         </div>
+
+//         {/* FEATURE 3: HAZARD LOGGING */}
+//         <div className="feature-row">
+//           <div className="feature-content">
+//             <div className="feature-badge" style={{ background: '#f4f6f4', color: '#093325' }}>MODULE 03</div>
+//             <h2 className="feature-title">Incident History & Hazard Logs</h2>
+//             <p className="feature-desc">
+//               Every active defense trigger writes a secure, permanent historical log into the decentralized relational system layer. This provides real-time event logging, helpful for threat mapping and legal audit compilation.
+//             </p>
+//             <ul className="feature-list">
+//               <li>📝 Automatic database incident logging pipelines</li>
+//               <li>📊 Structured severity mapping (Critical, Alert, Normal)</li>
+//               <li>🛡️ Encrypted user identifiers ensuring high data privacy</li>
+//             </ul>
+//           </div>
+//           <div className="feature-image-wrapper">
+//             <img src={images.logging} alt="Intel Hazard Logging" className="feature-image" />
+//           </div>
+//         </div>
+
+//       </section>
+//     </div>
+//   );
+// }
+
+// export default FeaturesPage;
+
+
+
+
+
+
+////////real code 
+
 
 // src/pages/FeaturesPage.jsx
 import React from 'react';
 
-function FeaturesPage() {
+function FeaturesPage({ theme }) { // 👈 এখানে theme প্রপ্স যোগ করা হয়েছে
   const images = {
     sos: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=600&q=80",
     tracking: "https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80",
     logging: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80"
   };
 
+  const isDark = theme === 'dark';
+
+  // ডার্ক মোডের সাথে সামঞ্জস্যপূর্ণ CSS Variables
+  const cssVariables = {
+    '--bg-color': isDark ? '#0b1310' : '#f9fbf9',
+    '--primary-text': isDark ? '#f8fafc' : '#093325',
+    '--secondary-text': isDark ? '#a2b7b0' : '#5c726a',
+    '--hover-shadow': isDark ? '0 12px 30px rgba(0,0,0,0.4)' : '0 12px 30px rgba(9, 51, 37, 0.06)'
+  };
+
   return (
-    <div className="features-page-container">
+    <div className="features-page-container" style={cssVariables}>
       
       {/* 📱 100% INDEPENDENT LOCAL RESPONSIVE STYLESHEET */}
       <style>{`
         .features-page-container {
           box-sizing: border-box;
           width: 100%;
-          color: #093325;
+          color: var(--primary-text);
           padding-bottom: 40px;
           font-family: system-ui, -apple-system, sans-serif;
-          background-color: #f9fbf9; /* Makes container completely standalone */
+          background-color: var(--bg-color); /* ডাইনামিক ব্যাকগ্রাউন্ড */
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
         .features-page-container *, 
         .features-page-container *::before, 
@@ -375,18 +658,20 @@ function FeaturesPage() {
         .features-main-title {
           font-size: 48px;
           font-weight: 800;
-          color: #093325;
+          color: var(--primary-text);
           letter-spacing: -1.5px;
           margin: 0 auto 20px auto;
           max-width: 600px;
           line-height: 1.2;
+          transition: color 0.3s ease;
         }
         .features-hero-desc {
           font-size: 16px;
-          color: #5c726a;
+          color: var(--secondary-text);
           max-width: 540px;
           margin: 0 auto;
           line-height: 1.6;
+          transition: color 0.3s ease;
         }
 
         /* DETAILED FEATURES SECTION */
@@ -415,36 +700,38 @@ function FeaturesPage() {
         }
         .feature-badge {
           padding: 6px 14px;
-          background: #fee2e2;
-          color: #ef4444;
           border-radius: 50px;
           font-size: 11px;
           font-weight: 700;
           display: inline-block;
           margin-bottom: 20px;
           letter-spacing: 0.5px;
+          transition: all 0.3s ease;
         }
         .feature-title {
           font-size: 32px;
           font-weight: 800;
-          color: #093325;
+          color: var(--primary-text);
           margin: 0 0 18px 0;
           letter-spacing: -0.8px;
+          transition: color 0.3s ease;
         }
         .feature-desc {
           font-size: 15px;
-          color: #5c726a;
+          color: var(--secondary-text);
           line-height: 1.65;
           margin: 0 0 24px 0;
+          transition: color 0.3s ease;
         }
         .feature-list {
           padding-left: 20px;
           margin: 0;
           font-size: 14.5px;
-          color: #093325;
+          color: var(--primary-text);
           line-height: 2;
           font-weight: 600;
           list-style-type: square;
+          transition: color 0.3s ease;
         }
         .feature-image-wrapper {
           flex: 1;
@@ -452,8 +739,8 @@ function FeaturesPage() {
           height: 340px;
           border-radius: 24px;
           overflow: hidden;
-          box-shadow: 0 12px 30px rgba(9, 51, 37, 0.06);
-          transition: transform 0.3s ease;
+          box-shadow: var(--hover-shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .feature-image-wrapper:hover {
           transform: scale(1.02);
@@ -461,12 +748,11 @@ function FeaturesPage() {
         .feature-image {
           width: 100%;
           height: 100%;
-          objectFit: 'cover';
-          object-fit: 'cover';
+          object-fit: cover;
           display: block;
         }
 
-        /* 📱 Tablet & Mobile Responsive Breakpoints */
+        /* 📱 Responsive Breakpoints */
         @media (max-width: 768px) {
           .features-hero {
             padding: 100px 20px 30px 20px;
@@ -481,7 +767,6 @@ function FeaturesPage() {
             padding: 20px 20px 40px 20px;
             gap: 50px;
           }
-          /* Normal and Reversed rows will both stack vertically uniformly on mobile */
           .feature-row, 
           .feature-row.is-reversed {
             flex-direction: column;
@@ -496,12 +781,10 @@ function FeaturesPage() {
             margin-bottom: 16px;
           }
           .feature-image-wrapper {
-            height: 250px; /* Reduced height for mobile optimization */
-            border-radius: 16px;
+            height: 250px;
           }
         }
 
-        /* 📱 Small Portrait Smartphones */
         @media (max-width: 480px) {
           .features-hero {
             padding: 90px 16px 24px 16px;
@@ -532,7 +815,8 @@ function FeaturesPage() {
         {/* FEATURE 1: INSTANT SOS */}
         <div className="feature-row">
           <div className="feature-content">
-            <div className="feature-badge">MODULE 01</div>
+            {/* ডার্ক মোড ফ্রেন্ডলি ব্যাজ স্টাইল */}
+            <div className="feature-badge" style={{ background: isDark ? '#3b1818' : '#fee2e2', color: '#ef4444' }}>MODULE 01</div>
             <h2 className="feature-title">Instant SOS Broadcast Node</h2>
             <p className="feature-desc">
               Trigger an immediate, high-priority alarm with a single interaction. The system automatically bypasses browser background delays to process telemetry packets, instantly fetching high-accuracy GPS grids.
@@ -551,7 +835,7 @@ function FeaturesPage() {
         {/* FEATURE 2: LIVE TRACK GRID */}
         <div className="feature-row is-reversed">
           <div className="feature-content">
-            <div className="feature-badge" style={{ background: '#e0f2fe', color: '#0284c7' }}>MODULE 02</div>
+            <div className="feature-badge" style={{ background: isDark ? '#0c2333' : '#e0f2fe', color: '#0284c7' }}>MODULE 02</div>
             <h2 className="feature-title">Live Telemetry Tracking Grid</h2>
             <p className="feature-desc">
               Keep your trusted guardians updated with active location parameters. Leveraging integrated digital cartography layers, the application streams accurate coordinates without heavy network resource draining.
@@ -570,7 +854,7 @@ function FeaturesPage() {
         {/* FEATURE 3: HAZARD LOGGING */}
         <div className="feature-row">
           <div className="feature-content">
-            <div className="feature-badge" style={{ background: '#f4f6f4', color: '#093325' }}>MODULE 03</div>
+            <div className="feature-badge" style={{ background: isDark ? '#16231f' : '#f4f6f4', color: isDark ? '#10b981' : '#093325' }}>MODULE 03</div>
             <h2 className="feature-title">Incident History & Hazard Logs</h2>
             <p className="feature-desc">
               Every active defense trigger writes a secure, permanent historical log into the decentralized relational system layer. This provides real-time event logging, helpful for threat mapping and legal audit compilation.
