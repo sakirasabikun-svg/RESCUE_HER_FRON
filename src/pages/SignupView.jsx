@@ -931,7 +931,7 @@ function SignupView({ onSignupSuccess, onLoginSuccess, onSwitchToLogin, onBackTo
         </div>
 
         <div style={switchTextStyle}>
-          Already have an operational profile? <span onClick={onSwitchToLogin} style={loginLinkStyle}>Login</span>
+          Already have an operational profile? <span onClick={onSwitchToLogin} style={loginLinkStyle}> Sign In</span>
         </div>
 
         <button onClick={onBackToHome} style={backButtonStyle}>← Return to Platform Gateway</button>
